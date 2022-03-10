@@ -1,4 +1,4 @@
-console.log("=== OBJETO LITERAL ===");
+console.log("=== OBJETO LITERAL (DINAMICO) ===");
 
 /*
 Conceitos - O que é um objeto?
