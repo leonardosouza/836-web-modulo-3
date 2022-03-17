@@ -18,13 +18,13 @@ console.log(window.minhaLinguagemPreferida()); // a função é um método no es
 var curso = "Web Degree EXTERNAL"; // global
 
 function testeEscopo() {
-  var curso = "WEB DEGREE Internal"; // variável global implícita
+  curso = "WEB DEGREE Internal"; // variável global implícita
   return curso;
 }
 
 console.log(testeEscopo()); // Web Degree Internal
-console.log(window.curso); // Web Degree EXTERNAL
-console.log(curso); // Web Degree EXTERNAL
+console.log(window.curso); // Web Degree Internal
+console.log(curso); // Web Degree Internal
 
 { let modulo = "POO"; } // ES6 OU > - ESCOPO POR CHAVES (let / const)
 
