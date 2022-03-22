@@ -2,7 +2,7 @@ console.log("=== CLASSES - ESx ===");
 
 /*
         |-----------|
-        |   CARRO   | => ENTIDADE
+        | AUTOMOVEL | => ENTIDADE
         | ----------|
        /             \
     PROPS           MÉTODOS
