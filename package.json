@@ -1,0 +1,25 @@
+{
+  "name": "modulo-orientacao-objetos",
+  "version": "1.0.0",
+  "description": "Modulo OOP",
+  "main": "uso-de-classes.js",
+  "type": "module",
+  "scripts": {
+    "start": "node uso-de-classes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardosouza/836-web-modulo-3.git"
+  },
+  "keywords": [
+    "oop",
+    "js",
+    "node"
+  ],
+  "author": "Leonardo Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonardosouza/836-web-modulo-3/issues"
+  },
+  "homepage": "https://github.com/leonardosouza/836-web-modulo-3#readme"
+}
