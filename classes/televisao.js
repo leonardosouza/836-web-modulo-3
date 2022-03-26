@@ -1,9 +1,10 @@
-class Televisao {
-  constructor(fabricante=null, polegadas=0, canal=0, volume=0, ligada=false) {
-    this.#canal = canal;
-    this.#volume = volume;
-    this.#ligada = ligada;
-    this.#fabricante = fabricante;
+import { Eletronico } from "./eletronico.js";
+
+// Herança
+// new Televisao("7", lg, 100, false, 55)
+class Televisao extends Eletronico {
+  constructor (emissora=null, fabricante=null, volume=0, status=false, polegadas=0) {
+    super(emissora, fabricante, volume, status);
     this.#polegadas = polegadas;
   }
 
@@ -15,46 +16,21 @@ class Televisao {
     13: "BAND"
   }
 
-  static msg = {
-    "MUDAR_CANAL_EXCEP": `Não foi possível mudar o canal porque a TV está desligada!`,
-    "AUMENTAR_VOL_EXCEP": `Não foi possível aumentar o volume porque a TV está desligada!`,
-    "DIMINUIR_VOL_EXCEP": `Não foi possível diminuir o volume porque a TV está desligada!`
-  };
-
-  // props
-  #canal
-  #volume
-  #ligada
-  #fabricante
   #polegadas
 
-  // métodos
-  ligar() {
-    return this.#ligada = true;
+  get polegadas() {
+    return this.#polegadas;
   }
 
-  desligar() {
-    return this.#ligada = false;
+  // só consigo acessar membros públicos
+  canalSintonizado() {
+    return this.emissora;
   }
 
-  mudarCanal(numero = this.#canal) {
-    if (this.#ligada) return this.#canal = numero;
-    throw new Error(Televisao.msg.MUDAR_CANAL_EXCEP); // Lançou uma excessão
-  }
-
-  aumentarVolume() {
-    if (this.#ligada) return this.#volume += 1;
-    throw new Error(Televisao.msg.AUMENTAR_VOL_EXCEP); // Lançou uma excessão
-  }
-
-  diminuirVolume() {
-    if (this.#ligada) return this.#volume -= 1;
-    throw new Error(Televisao.msg.DIMINUIR_VOL_EXCEP); // Lançou uma excessão
-  }
-
+  // polimorfismo - reescrita do método
   info() {
-    return `Sua TV ${this.#fabricante.nome} está ${ 
-      (this.#ligada) ? 'ligada no canal ' + Televisao.canais[this.#canal] : 'desligada' }`;
+    return `Sua TV ${this.fabricante.nome} de ${this.#polegadas}" está ${ 
+      (this.status) ? `ligada e sintonizada na emissora ${Televisao.canais[this.emissora]}` : 'desligada' }`;
   }
 }
 
